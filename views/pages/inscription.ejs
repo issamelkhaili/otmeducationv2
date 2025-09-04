@@ -1,0 +1,385 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<!-- Hero Section -->
+<section class="hero hero-signup">
+    <div class="container mx-auto px-4">
+        <div class="hero-content text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">
+                Inscription
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Commencez votre parcours vers l'éducation internationale dès aujourd'hui.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Registration Form -->
+<section class="section">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6">Informations personnelles</h2>
+                    <p class="text-secondary mb-8">
+                        Remplissez le formulaire ci-dessous pour commencer votre inscription.
+                    </p>
+                    
+                    <form class="space-y-6" id="registration-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthDate" class="form-label">Date de naissance *</label>
+                            <input type="date" id="birthDate" name="birthDate" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nationality" class="form-label">Nationalité *</label>
+                            <select id="nationality" name="nationality" class="form-input" required>
+                                <option value="">Sélectionnez votre nationalité</option>
+                                <option value="french">Française</option>
+                                <option value="european">Européenne</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="education" class="form-label">Niveau d'éducation actuel *</label>
+                            <select id="education" name="education" class="form-input" required>
+                                <option value="">Sélectionnez votre niveau</option>
+                                <option value="bac">Baccalauréat</option>
+                                <option value="bac+2">Bac+2 (DUT, BTS)</option>
+                                <option value="bac+3">Bac+3 (Licence)</option>
+                                <option value="bac+4">Bac+4 (Master 1)</option>
+                                <option value="bac+5">Bac+5 (Master 2)</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destination" class="form-label">Destination souhaitée *</label>
+                            <select id="destination" name="destination" class="form-input" required>
+                                <option value="">Sélectionnez votre destination</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">États-Unis</option>
+                                <option value="uk">Royaume-Uni</option>
+                                <option value="australia">Australie</option>
+                                <option value="germany">Allemagne</option>
+                                <option value="spain">Espagne</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="program" class="form-label">Programme d'intérêt *</label>
+                            <select id="program" name="program" class="form-input" required>
+                                <option value="">Sélectionnez un programme</option>
+                                <option value="discovery">Pack Découverte (299€)</option>
+                                <option value="premium">Pack Premium (799€)</option>
+                                <option value="ultimate">Pack Ultimate (1499€)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message (optionnel)</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" 
+                                      placeholder="Décrivez votre projet et vos objectifs..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="terms" class="mr-2" required>
+                                <span class="text-sm">
+                                    J'accepte les <a href="#" class="text-primary hover:underline">conditions générales</a> 
+                                    et la <a href="#" class="text-primary hover:underline">politique de confidentialité</a> *
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="newsletter" class="mr-2">
+                                <span class="text-sm">Je souhaite recevoir la newsletter OTM Education</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Package Selection & Payment -->
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-6">Sélection du programme</h2>
+                    
+                    <!-- Package Cards -->
+                    <div class="space-y-6 mb-8">
+                        <div class="card border-2 border-gray-200 hover:border-primary transition-colors duration-300 cursor-pointer" 
+                             data-package="discovery" data-price="299">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Pack Découverte</h3>
+                                    <p class="text-secondary text-sm">Formule de base</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-primary">299€</div>
+                                    <div class="text-sm text-secondary">TTC</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-2 border-primary hover:border-blue-700 transition-colors duration-300 cursor-pointer" 
+                             data-package="premium" data-price="799">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Pack Premium</h3>
+                                    <p class="text-secondary text-sm">Formule complète</p>
+                                    <span class="bg-primary text-white px-2 py-1 rounded-full text-xs">POPULAIRE</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-primary">799€</div>
+                                    <div class="text-sm text-secondary">TTC</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-2 border-gray-200 hover:border-primary transition-colors duration-300 cursor-pointer" 
+                             data-package="ultimate" data-price="1499">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Pack Ultimate</h3>
+                                    <p class="text-secondary text-sm">Formule sur mesure</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-primary">1499€</div>
+                                    <div class="text-sm text-secondary">TTC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Selected Package Summary -->
+                    <div class="card bg-gray-50 mb-6" id="package-summary" style="display: none;">
+                        <h3 class="font-bold mb-3">Récapitulatif</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Programme sélectionné :</span>
+                                <span id="selected-package-name" class="font-bold"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Prix :</span>
+                                <span id="selected-package-price" class="font-bold text-primary"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stripe Payment Form -->
+                    <div class="card" id="payment-section" style="display: none;">
+                        <h3 class="font-bold mb-4">Paiement sécurisé</h3>
+                        <p class="text-secondary text-sm mb-4">
+                            Vos informations de paiement sont protégées par un cryptage SSL de niveau bancaire.
+                        </p>
+                        
+                        <!-- Stripe Elements Placeholder -->
+                        <div class="space-y-4">
+                            <div class="form-group">
+                                <label class="form-label">Numéro de carte</label>
+                                <div class="form-input bg-gray-100 flex items-center">
+                                    <i class="fas fa-credit-card text-gray-400 mr-2"></i>
+                                    <span class="text-gray-500">4242 4242 4242 4242</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="form-group">
+                                    <label class="form-label">Date d'expiration</label>
+                                    <div class="form-input bg-gray-100 flex items-center">
+                                        <i class="fas fa-calendar text-gray-400 mr-2"></i>
+                                        <span class="text-gray-500">MM/AA</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">CVC</label>
+                                    <div class="form-input bg-gray-100 flex items-center">
+                                        <i class="fas fa-lock text-gray-400 mr-2"></i>
+                                        <span class="text-gray-500">123</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Nom sur la carte</label>
+                                <input type="text" class="form-input" placeholder="Nom complet">
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary w-full mt-6" id="pay-button">
+                            <i class="fas fa-lock mr-2"></i>
+                            Payer et finaliser l'inscription
+                        </button>
+                        
+                        <p class="text-xs text-center text-gray-500 mt-4">
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Paiement sécurisé par Stripe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Pourquoi s'inscrire maintenant ?</h2>
+            <p>Profitez de nos avantages exclusifs et commencez votre parcours sans attendre.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card text-center hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon mx-auto mb-6">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Démarrage rapide</h3>
+                <p>
+                    Commencez votre accompagnement dans les 24h suivant votre inscription. 
+                    Pas de temps perdu !
+                </p>
+            </div>
+            
+            <div class="card text-center hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon mx-auto mb-6">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Bonus exclusifs</h3>
+                <p>
+                    Accès à nos ressources exclusives : guides, templates, et conseils d'experts 
+                    pour maximiser vos chances de réussite.
+                </p>
+            </div>
+            
+            <div class="card text-center hover-lift" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon mx-auto mb-6">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Communauté privée</h3>
+                <p>
+                    Rejoignez notre communauté d'étudiants internationaux et échangez 
+                    avec des personnes partageant vos objectifs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section bg-primary text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">
+            Prêt à transformer votre avenir ?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Rejoignez des milliers d'étudiants qui ont déjà transformé leur vie avec OTM Education.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+            <button class="btn btn-accent text-lg px-8 py-4" onclick="scrollToTop()">
+                Commencer l'inscription
+            </button>
+            <a href="/contact" class="btn btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                Nous contacter
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Registration Form JavaScript -->
+<script>
+// Package selection
+document.querySelectorAll('[data-package]').forEach(card => {
+    card.addEventListener('click', function() {
+        // Remove active class from all cards
+        document.querySelectorAll('[data-package]').forEach(c => {
+            c.classList.remove('border-primary', 'border-blue-700');
+            c.classList.add('border-gray-200');
+        });
+        
+        // Add active class to selected card
+        this.classList.remove('border-gray-200');
+        this.classList.add('border-primary');
+        
+        // Update form
+        const packageSelect = document.getElementById('program');
+        packageSelect.value = this.dataset.package;
+        
+        // Show package summary
+        const summary = document.getElementById('package-summary');
+        const packageName = this.querySelector('h3').textContent;
+        const packagePrice = this.dataset.price + '€';
+        
+        document.getElementById('selected-package-name').textContent = packageName;
+        document.getElementById('selected-package-price').textContent = packagePrice;
+        summary.style.display = 'block';
+        
+        // Show payment section
+        document.getElementById('payment-section').style.display = 'block';
+    });
+});
+
+// Form validation
+document.getElementById('registration-form').addEventListener('input', function() {
+    const requiredFields = this.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value) {
+            isValid = false;
+        }
+    });
+    
+    const packageSelect = document.getElementById('program');
+    if (!packageSelect.value) {
+        isValid = false;
+    }
+    
+    const payButton = document.getElementById('pay-button');
+    if (payButton) {
+        payButton.disabled = !isValid;
+        payButton.classList.toggle('opacity-50', !isValid);
+    }
+});
+
+// Payment button
+document.getElementById('pay-button').addEventListener('click', function() {
+    // Show success message (in real app, this would process payment via Stripe)
+    alert('Paiement simulé avec succès ! Votre inscription a été confirmée. Nous vous contacterons dans les 24h.');
+});
+
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+<%- include('../partials/footer') %>

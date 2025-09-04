@@ -1,0 +1,47 @@
+<%- include('../partials/head', { title: title || 'Erreur | OTM Education', description: (typeof description !== 'undefined' ? description : 'Une erreur est survenue. Veuillez réessayer plus tard.') }) %>
+<%- include('../partials/header') %>
+
+<!-- Error Section -->
+<section class="section bg-gray-50 min-h-screen flex items-center">
+    <div class="container mx-auto px-4 text-center">
+        <div data-aos="fade-up">
+            <div class="text-8xl font-bold text-error-color mb-6">500</div>
+            <h1 class="text-4xl font-bold mb-6">Erreur serveur</h1>
+            <p class="text-xl text-secondary mb-8 max-w-2xl mx-auto">
+                Une erreur inattendue s'est produite. Nos équipes techniques ont été notifiées 
+                et travaillent à résoudre le problème.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="/" class="btn btn-primary text-lg px-8 py-4">
+                    <i class="fas fa-home mr-2"></i>
+                    Retour à l'accueil
+                </a>
+                <a href="/contact" class="btn btn-outline text-lg px-8 py-4">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Nous contacter
+                </a>
+            </div>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-lg p-6 shadow-lg">
+                <h2 class="text-xl font-bold mb-4">Que pouvez-vous faire ?</h2>
+                <ul class="text-left space-y-2 text-secondary">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-success-color mr-2 mt-1 flex-shrink-0"></i>
+                        Actualisez la page dans quelques minutes
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-success-color mr-2 mt-1 flex-shrink-0"></i>
+                        Vérifiez votre connexion internet
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-success-color mr-2 mt-1 flex-shrink-0"></i>
+                        Contactez-nous si le problème persiste
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

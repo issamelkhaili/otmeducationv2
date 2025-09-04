@@ -1,0 +1,59 @@
+<!-- Header -->
+<header class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="text-2xl font-bold text-blue-900 transform transition-transform duration-300 hover:scale-105 group">
+                    <svg class="h-12 w-auto inline-block" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10C31.0457 10 40 18.9543 40 30C40 41.0457 31.0457 50 20 50C8.9543 50 0 41.0457 0 30C0 18.9543 8.9543 10 20 10Z" fill="#003f88"/>
+                        <path d="M50 10C61.0457 10 70 18.9543 70 30C70 41.0457 61.0457 50 50 50C38.9543 50 30 41.0457 30 30C30 18.9543 38.9543 10 50 10Z" fill="#0077b6"/>
+                        <path d="M80 10C91.0457 10 100 18.9543 100 30C100 41.0457 91.0457 50 80 50C68.9543 50 60 41.0457 60 30C60 18.9543 68.9543 10 80 10Z" fill="#00b4d8"/>
+                        <text x="20" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">O</text>
+                        <text x="50" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">T</text>
+                        <text x="80" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">M</text>
+                    </svg>
+                    <span class="ml-2 relative inline-block">
+                        Education
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Accueil</a>
+                <a href="/nos-services" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Nos Services</a>
+                <a href="/pourquoi-otm-education" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Pourquoi OTM Education</a>
+                
+                <a href="/faq" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">FAQ</a>
+                <a href="/contact" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-primary transition-colors duration-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200">
+            <div class="flex flex-col space-y-4 pt-4">
+                <a href="/" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Accueil</a>
+                <a href="/nos-services" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Nos Services</a>
+                <a href="/pourquoi-otm-education" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Pourquoi OTM Education</a>
+                
+                <a href="/faq" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">FAQ</a>
+                <a href="/contact" class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Menu JavaScript -->
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>

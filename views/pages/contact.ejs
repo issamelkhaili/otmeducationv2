@@ -1,0 +1,264 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<!-- Hero Section -->
+<section class="hero hero-contact">
+    <div class="container mx-auto px-4">
+        <div class="hero-content text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">
+                Contactez-nous
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Nous sommes là pour répondre à toutes vos questions sur l'éducation internationale.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="section">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold mb-6">Envoyez-nous un message</h2>
+                <p class="text-secondary mb-8">
+                    Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+                </p>
+                
+                <form class="space-y-6" id="contact-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Sujet *</label>
+                        <select id="subject" name="subject" class="form-input" required>
+                            <option value="">Choisissez un sujet</option>
+                            <option value="admissions">Admissions universitaires</option>
+                            <option value="visa">Assistance visa</option>
+                            <option value="interviews">Préparation aux entretiens</option>
+                            <option value="programs">Nos programmes</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" required 
+                                  placeholder="Décrivez votre projet et vos besoins..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="newsletter" class="mr-2">
+                            <span class="text-sm">Je souhaite recevoir la newsletter OTM Education</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full py-4 text-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Contact Info -->
+            <div data-aos="fade-left">
+                <h2 class="text-3xl font-bold mb-6">Informations de contact</h2>
+                
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Adresse</h3>
+                            <p class="text-secondary">
+                                123 Avenue de l'Éducation<br>
+                                75001 Paris, France
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Téléphone</h3>
+                            <p class="text-secondary">
+                                +33 1 23 45 67 89<br>
+                                +33 1 23 45 67 90
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Email</h3>
+                            <p class="text-secondary">
+                                contact@otmeducation.com<br>
+                                info@otmeducation.com
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Horaires d'ouverture</h3>
+                            <p class="text-secondary">
+                                Lundi - Vendredi : 9h00 - 18h00<br>
+                                Samedi : 9h00 - 13h00<br>
+                                Dimanche : Fermé
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="mt-8">
+                    <h3 class="font-bold text-lg mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="section bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Notre localisation</h2>
+            <p>Venez nous rencontrer dans nos bureaux parisiens.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="zoom-in">
+            <img src="/assets/images/contactmap.webp" alt="Localisation OTM Education" class="w-full h-96 object-cover">
+        </div>
+        
+        <div class="text-center mt-6">
+            <p class="text-secondary mb-4">
+                <i class="fas fa-info-circle mr-2"></i>
+                Nos bureaux sont facilement accessibles en transport en commun
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm text-secondary">
+                <span><i class="fas fa-subway mr-1"></i> Métro : Ligne 1, 4, 7, 11, 14</span>
+                <span><i class="fas fa-bus mr-1"></i> Bus : 20, 29, 38, 47, 75</span>
+                <span><i class="fas fa-train mr-1"></i> RER : A, B, D</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <div class="container mx-auto px-4">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Questions fréquentes</h2>
+            <p>Trouvez rapidement des réponses à vos questions.</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto space-y-4">
+            <div class="card hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-bold mb-3">Combien de temps faut-il pour obtenir une réponse ?</h3>
+                <p class="text-secondary">
+                    Nous nous engageons à répondre à toutes les demandes dans un délai maximum de 24 heures 
+                    en semaine. Pour les demandes urgentes, n'hésitez pas à nous appeler directement.
+                </p>
+            </div>
+            
+            <div class="card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-bold mb-3">Proposez-vous des consultations gratuites ?</h3>
+                <p class="text-secondary">
+                    Oui, nous offrons une consultation gratuite de 30 minutes pour évaluer votre projet 
+                    et vous présenter nos services. Prenez rendez-vous via notre formulaire de contact.
+                </p>
+            </div>
+            
+            <div class="card hover-lift" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-xl font-bold mb-3">Pouvez-vous m'aider avec mon projet spécifique ?</h3>
+                <p class="text-secondary">
+                    Absolument ! Chaque projet est unique et nous adaptons nos services à vos besoins spécifiques. 
+                    Contactez-nous pour discuter de votre situation particulière.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section bg-primary text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">
+            Prêt à commencer votre aventure ?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Contactez-nous dès aujourd'hui pour discuter de votre projet d'éducation internationale.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+            <a href="/inscription" class="btn btn-accent text-lg px-8 py-4">
+                Inscription gratuite
+            </a>
+            <a href="tel:+33123456789" class="btn btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                <i class="fas fa-phone mr-2"></i>
+                Nous appeler
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form JavaScript -->
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Show success message (in real app, this would send to server)
+    alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+    this.reset();
+});
+</script>
+
+<%- include('../partials/footer') %>
