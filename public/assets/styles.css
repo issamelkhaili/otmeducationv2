@@ -485,7 +485,7 @@ a:hover {
     background: url('/assets/images/heroes/contact-hero.webp') center/cover;
 }
 
-.hero-signup::before {
+.hero-inscription::before {
     background: url('/assets/images/otmsignuphero.jpeg') center/cover;
 }
 
