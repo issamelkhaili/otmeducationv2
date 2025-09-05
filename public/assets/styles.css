@@ -399,7 +399,7 @@ a:hover {
     color: #FFFFFF;
     font-size: 1.25rem;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     font-weight: 400;
     line-height: 1.6;
@@ -486,11 +486,12 @@ a:hover {
 }
 
 .hero-inscription::before {
-    background: url('/assets/images/otmsignuphero.jpeg') center/cover;
+    background: url('/assets/images/heroes/inscription-hero.webp') center/cover;
 }
 
 .hero-faq::before {
-    background: linear-gradient(135deg, rgba(0,63,136,.5), rgba(0,119,182,.5));
+    background: url('/assets/images/heroes/faq-hero.webp') center/cover;
+    opacity: 0.4;
 }
 
 /* FAQ */
@@ -511,6 +512,81 @@ a:hover {
 
 .faq-item[open] summary {
     color: var(--primary-color);
+}
+
+/* Enhanced FAQ Items */
+.faq-item-enhanced {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+}
+
+.faq-summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text-primary);
+    outline: none;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.faq-summary:hover {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    color: var(--primary-color);
+}
+
+.faq-item-enhanced[open] .faq-summary {
+    color: var(--primary-color);
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-bottom-color: #e5e7eb;
+}
+
+.faq-icon-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-item-enhanced[open] .faq-icon-wrapper {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    transform: scale(1.05);
+}
+
+.faq-content {
+    padding: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hide reCAPTCHA badge (UI) */

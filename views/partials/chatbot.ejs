@@ -1,0 +1,375 @@
+<!-- Floating Chat Button -->
+<div id="chatbot-trigger" class="fixed bottom-6 right-6 z-50">
+    <button class="w-16 h-16 bg-gradient-to-r from-primary to-blue-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center group">
+        <svg class="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
+        </svg>
+        <!-- Pulse animation -->
+        <div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-20"></div>
+    </button>
+</div>
+
+<!-- Chatbot Modal -->
+<div id="chatbot-modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+    
+    <!-- Robot Character -->
+    <div class="absolute bottom-0 left-0 transform translate-y-full transition-transform duration-700 ease-out md:block hidden" id="robot-character">
+        <div class="relative">
+            <img src="/assets/images/team/otm-ai-bot.webp" alt="OTM AI Bot" 
+                 class="w-[500px] h-[500px] object-contain robot-fly-animation" 
+                 style="background: transparent; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.3));">
+            <!-- Flying particles effect -->
+            <div class="absolute -top-6 -left-6 w-6 h-6 bg-blue-400 rounded-full animate-ping opacity-60"></div>
+            <div class="absolute -top-3 -right-8 w-4 h-4 bg-primary rounded-full animate-ping opacity-40" style="animation-delay: 0.5s;"></div>
+            <div class="absolute -bottom-6 -left-3 w-4 h-4 bg-cyan-400 rounded-full animate-ping opacity-50" style="animation-delay: 1s;"></div>
+            <!-- Speech bubble -->
+            <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-white rounded-2xl px-5 py-4 shadow-lg opacity-0 robot-speech" style="animation-delay: 1.5s;">
+                <p class="text-lg text-gray-800 font-semibold">Salut ! 👋</p>
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
+                    <div class="w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chatbot Container -->
+    <div class="absolute bottom-0 right-0 w-96 h-[600px] bg-white rounded-t-3xl shadow-2xl transform translate-y-full transition-transform duration-500 ease-out md:block hidden" id="chatbot-container">
+        <!-- Chat Header -->
+        <div class="bg-gradient-to-r from-primary to-blue-600 text-white p-6 rounded-t-3xl relative">
+            <div class="flex items-center space-x-4">
+                <!-- Bot Avatar -->
+                <div class="relative">
+                    <img src="/assets/images/team/otm-ai-bot.webp" alt="OTM AI Bot" class="w-12 h-12 rounded-full object-cover">
+                    <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">OTM AI Assistant</h3>
+                    <p class="text-blue-100 text-sm">En ligne • Prêt à vous aider</p>
+                </div>
+            </div>
+            <!-- Close Button -->
+            <button id="chatbot-close" class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Chat Messages -->
+        <div class="flex-1 p-6 overflow-y-auto h-[400px]" id="chat-messages">
+            <!-- Welcome Message -->
+            <div class="flex items-start space-x-3 mb-6">
+                <img src="/assets/images/team/otm-ai-bot.webp" alt="OTM AI Bot" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                <div class="bg-gray-100 rounded-2xl rounded-tl-sm p-4 max-w-xs">
+                    <p class="text-gray-800">Bonjour ! 👋 Je suis votre assistant OTM Education. Comment puis-je vous aider aujourd'hui ?</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <button class="quick-question bg-primary text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 transition-colors duration-200" data-question="Comment s'inscrire ?">
+                            Comment s'inscrire ?
+                        </button>
+                        <button class="quick-question bg-primary text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 transition-colors duration-200" data-question="Quels sont vos services ?">
+                            Vos services
+                        </button>
+                        <button class="quick-question bg-primary text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 transition-colors duration-200" data-question="Prix et tarifs">
+                            Prix et tarifs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chat Input -->
+        <div class="p-6 border-t border-gray-200">
+            <div class="flex space-x-3">
+                <input type="text" id="chat-input" placeholder="Tapez votre message..." class="flex-1 border border-gray-300 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                <button id="chat-send" class="w-12 h-12 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Chatbot Container -->
+    <div class="absolute bottom-0 left-0 right-0 h-[70vh] bg-white rounded-t-3xl shadow-2xl transform translate-y-full transition-transform duration-500 ease-out md:hidden" id="chatbot-container-mobile">
+        <!-- Chat Header -->
+        <div class="bg-gradient-to-r from-primary to-blue-600 text-white p-6 rounded-t-3xl relative">
+            <div class="flex items-center space-x-4">
+                <!-- Bot Avatar -->
+                <div class="relative">
+                    <img src="/assets/images/team/otm-ai-bot.webp" alt="OTM AI Bot" 
+                         class="w-10 h-10 rounded-full object-cover">
+                    <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">OTM AI Assistant</h3>
+                    <p class="text-blue-100 text-sm">En ligne • Prêt à vous aider</p>
+                </div>
+            </div>
+            <!-- Close Button -->
+            <button id="chatbot-close-mobile" class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-200">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Chat Messages -->
+        <div class="flex-1 p-4 overflow-y-auto h-[calc(70vh-140px)]" id="chat-messages-mobile">
+            <!-- Welcome Message -->
+            <div class="flex items-start space-x-3 mb-6">
+                <img src="/assets/images/team/otm-ai-bot.webp" alt="OTM AI Bot" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                <div class="bg-gray-100 rounded-2xl rounded-tl-sm p-4 max-w-xs">
+                    <p class="text-gray-800">Bonjour ! 👋 Je suis votre assistant OTM Education. Comment puis-je vous aider aujourd'hui ?</p>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <button class="quick-question bg-primary text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 transition-colors duration-200" data-question="Comment s'inscrire ?">
+                            Comment s'inscrire ?
+                        </button>
+                        <button class="quick-question bg-primary text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 transition-colors duration-200" data-question="Quels sont vos services ?">
+                            Vos services
+                        </button>
+                        <button class="quick-question bg-primary text-white px-3 py-1 rounded-full text-xs hover:bg-blue-600 transition-colors duration-200" data-question="Prix et tarifs">
+                            Prix et tarifs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chat Input -->
+        <div class="p-4 border-t border-gray-200">
+            <div class="flex space-x-3">
+                <input type="text" id="chat-input-mobile" placeholder="Tapez votre message..." class="flex-1 border border-gray-300 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                <button id="chat-send-mobile" class="w-12 h-12 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chatbot CSS Animations -->
+<style>
+@keyframes robotFly {
+    0% {
+        transform: translateY(100%) scale(0.7) rotate(-8deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(30%) scale(1.05) rotate(3deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes robotBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes speechBubble {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.robot-fly-animation {
+    animation: robotFly 0.8s ease-out forwards;
+}
+
+.robot-speech {
+    animation: speechBubble 0.5s ease-out forwards;
+}
+
+/* Continuous bounce when robot is visible */
+#robot-character:not(.translate-y-full) .robot-fly-animation {
+    animation: robotBounce 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Ensure robot has no background */
+#robot-character img {
+    background: transparent !important;
+    background-color: transparent !important;
+    mix-blend-mode: normal;
+}
+</style>
+
+<!-- Chatbot JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const trigger = document.getElementById('chatbot-trigger');
+    const modal = document.getElementById('chatbot-modal');
+    const container = document.getElementById('chatbot-container');
+    const closeBtn = document.getElementById('chatbot-close');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatMessages = document.getElementById('chat-messages');
+    
+    // Open chatbot
+    trigger.addEventListener('click', function() {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            // Animate robot flying up first
+            const robot = document.getElementById('robot-character');
+            robot.classList.remove('translate-y-full');
+            
+            // Then animate appropriate chat container based on screen size
+            setTimeout(() => {
+                if (window.innerWidth >= 768) {
+                    // Desktop version
+                    container.classList.remove('translate-y-full');
+                } else {
+                    // Mobile version
+                    const mobileContainer = document.getElementById('chatbot-container-mobile');
+                    mobileContainer.classList.remove('translate-y-full');
+                }
+            }, 300);
+        }, 10);
+    });
+    
+    // Close chatbot
+    function closeChatbot() {
+        // Animate chat container down first
+        container.classList.add('translate-y-full');
+        const mobileContainer = document.getElementById('chatbot-container-mobile');
+        mobileContainer.classList.add('translate-y-full');
+        
+        // Then animate robot down
+        setTimeout(() => {
+            const robot = document.getElementById('robot-character');
+            robot.classList.add('translate-y-full');
+        }, 200);
+        
+        // Hide modal after animations complete
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 700);
+    }
+    
+    closeBtn.addEventListener('click', closeChatbot);
+    
+    // Mobile close button
+    const closeBtnMobile = document.getElementById('chatbot-close-mobile');
+    closeBtnMobile.addEventListener('click', closeChatbot);
+    
+    // Close on backdrop click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeChatbot();
+        }
+    });
+    
+    // Send message
+    function sendMessage(message, platform = 'desktop') {
+        if (!message.trim()) return;
+        
+        // Add user message
+        addMessage(message, 'user', platform);
+        
+        // Clear input
+        if (platform === 'mobile') {
+            chatInputMobile.value = '';
+        } else {
+            chatInput.value = '';
+        }
+        
+        // Simulate bot response
+        setTimeout(() => {
+            const response = getBotResponse(message);
+            addMessage(response, 'bot', platform);
+        }, 1000);
+    }
+    
+    // Add message to chat
+    function addMessage(message, sender, platform = 'desktop') {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `flex items-start space-x-3 mb-4 ${sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`;
+        
+        if (sender === 'bot') {
+            messageDiv.innerHTML = `
+                <img src="/assets/images/team/otm-ai-bot.webp" alt="OTM AI Bot" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                <div class="bg-gray-100 rounded-2xl rounded-tl-sm p-4 max-w-xs">
+                    <p class="text-gray-800">${message}</p>
+                </div>
+            `;
+        } else {
+            messageDiv.innerHTML = `
+                <div class="bg-gradient-to-r from-primary to-blue-600 text-white rounded-2xl rounded-tr-sm p-4 max-w-xs">
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        const targetContainer = platform === 'mobile' ? 
+            document.getElementById('chat-messages-mobile') : 
+            chatMessages;
+            
+        targetContainer.appendChild(messageDiv);
+        targetContainer.scrollTop = targetContainer.scrollHeight;
+    }
+    
+    // Get bot response
+    function getBotResponse(message) {
+        const responses = {
+            'comment s\'inscrire': 'Pour vous inscrire, rendez-vous sur notre page d\'inscription. Vous devrez payer une contribution de 35€ pour l\'entretien d\'orientation et l\'évaluation de votre profil. <a href="/inscription" class="text-primary underline">Cliquez ici pour commencer</a>',
+            'vos services': 'Nous proposons un accompagnement complet : orientation et sélection de cursus, préparation du dossier d\'admission, préparation aux tests et entretiens, assistance visa, recherche de logement, et intégration. <a href="/nos-services" class="text-primary underline">Découvrez nos services</a>',
+            'prix et tarifs': 'Nous avons supprimé nos packages tarifaires. Maintenant, il y a seulement une contribution de 35€ pour commencer votre parcours avec l\'entretien d\'orientation et l\'évaluation de profil.',
+            'contact': 'Vous pouvez nous contacter via notre page contact ou par téléphone. <a href="/contact" class="text-primary underline">Voir nos coordonnées</a>',
+            'faq': 'Consultez notre page FAQ pour les questions fréquentes. <a href="/faq" class="text-primary underline">Voir la FAQ</a>'
+        };
+        
+        const lowerMessage = message.toLowerCase();
+        for (const [key, response] of Object.entries(responses)) {
+            if (lowerMessage.includes(key)) {
+                return response;
+            }
+        }
+        
+        return 'Merci pour votre message ! Je suis là pour vous aider avec vos questions sur l\'éducation internationale. N\'hésitez pas à me poser des questions sur nos services, l\'inscription, ou nos destinations.';
+    }
+    
+    // Event listeners
+    chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage(chatInput.value);
+        }
+    });
+    
+    // Mobile event listeners
+    const chatSendMobile = document.getElementById('chat-send-mobile');
+    const chatInputMobile = document.getElementById('chat-input-mobile');
+    
+    chatSendMobile.addEventListener('click', () => sendMessage(chatInputMobile.value, 'mobile'));
+    chatInputMobile.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage(chatInputMobile.value, 'mobile');
+        }
+    });
+    
+    // Quick question buttons
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('quick-question')) {
+            const question = e.target.getAttribute('data-question');
+            const platform = window.innerWidth >= 768 ? 'desktop' : 'mobile';
+            sendMessage(question, platform);
+        }
+    });
+});
+</script>

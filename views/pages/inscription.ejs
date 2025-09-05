@@ -5,243 +5,319 @@
 <section class="hero hero-inscription">
     <div class="container mx-auto px-4">
         <div class="hero-content text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-                Inscription
+            <div class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                Inscription Express
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">
+                Commencez votre aventure
             </h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Commencez votre parcours vers l'éducation internationale dès aujourd'hui.
+                Rejoignez des milliers d'étudiants qui ont transformé leur vie avec OTM Education. 
+                <strong>Seulement 35€ pour commencer</strong>.
             </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="#registration-form" class="btn btn-primary text-lg px-8 py-4">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Commencer maintenant
+                </a>
+                <a href="#benefits" class="btn btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                    Voir les avantages
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Registration Form -->
-<section class="section">
+<!-- Multi-Step Registration Form -->
+<section id="registration-form" class="section bg-gradient-to-br from-gray-50 to-blue-50">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Form -->
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl font-bold mb-6">Informations personnelles</h2>
-                    <p class="text-secondary mb-8">
-                        Remplissez le formulaire ci-dessous pour commencer votre inscription.
-                    </p>
-                    
-                    <form class="space-y-6" id="registration-form">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group">
-                                <label for="firstName" class="form-label">Prénom *</label>
-                                <input type="text" id="firstName" name="firstName" class="form-input" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="lastName" class="form-label">Nom *</label>
-                                <input type="text" id="lastName" name="lastName" class="form-input" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Téléphone *</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="birthDate" class="form-label">Date de naissance *</label>
-                            <input type="date" id="birthDate" name="birthDate" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nationality" class="form-label">Nationalité *</label>
-                            <select id="nationality" name="nationality" class="form-input" required>
-                                <option value="">Sélectionnez votre nationalité</option>
-                                <option value="french">Française</option>
-                                <option value="european">Européenne</option>
-                                <option value="other">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="education" class="form-label">Niveau d'éducation actuel *</label>
-                            <select id="education" name="education" class="form-input" required>
-                                <option value="">Sélectionnez votre niveau</option>
-                                <option value="bac">Baccalauréat</option>
-                                <option value="bac+2">Bac+2 (DUT, BTS)</option>
-                                <option value="bac+3">Bac+3 (Licence)</option>
-                                <option value="bac+4">Bac+4 (Master 1)</option>
-                                <option value="bac+5">Bac+5 (Master 2)</option>
-                                <option value="other">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="destination" class="form-label">Destination souhaitée *</label>
-                            <select id="destination" name="destination" class="form-input" required>
-                                <option value="">Sélectionnez votre destination</option>
-                                <option value="canada">Canada</option>
-                                <option value="usa">États-Unis</option>
-                                <option value="uk">Royaume-Uni</option>
-                                <option value="australia">Australie</option>
-                                <option value="germany">Allemagne</option>
-                                <option value="spain">Espagne</option>
-                                <option value="other">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="program" class="form-label">Programme d'intérêt *</label>
-                            <select id="program" name="program" class="form-input" required>
-                                <option value="">Sélectionnez un programme</option>
-                                <option value="discovery">Pack Découverte (299€)</option>
-                                <option value="premium">Pack Premium (799€)</option>
-                                <option value="ultimate">Pack Ultimate (1499€)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message (optionnel)</label>
-                            <textarea id="message" name="message" class="form-input form-textarea" 
-                                      placeholder="Décrivez votre projet et vos objectifs..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="flex items-center">
-                                <input type="checkbox" name="terms" class="mr-2" required>
-                                <span class="text-sm">
-                                    J'accepte les <a href="#" class="text-primary hover:underline">conditions générales</a> 
-                                    et la <a href="#" class="text-primary hover:underline">politique de confidentialité</a> *
-                                </span>
-                            </label>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="flex items-center">
-                                <input type="checkbox" name="newsletter" class="mr-2">
-                                <span class="text-sm">Je souhaite recevoir la newsletter OTM Education</span>
-                            </label>
-                        </div>
-                    </form>
+            <!-- Progress Bar -->
+            <div class="mb-8" data-aos="fade-up">
+                <div class="flex items-center justify-center space-x-4 mb-4">
+                    <div class="step-indicator active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Informations</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Projet</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Paiement</div>
+                    </div>
                 </div>
-                
-                <!-- Package Selection & Payment -->
-                <div data-aos="fade-left">
-                    <h2 class="text-3xl font-bold mb-6">Sélection du programme</h2>
-                    
-                    <!-- Package Cards -->
-                    <div class="space-y-6 mb-8">
-                        <div class="card border-2 border-gray-200 hover:border-primary transition-colors duration-300 cursor-pointer" 
-                             data-package="discovery" data-price="299">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Pack Découverte</h3>
-                                    <p class="text-secondary text-sm">Formule de base</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Multi-Step Form -->
+                <div class="lg:col-span-2" data-aos="fade-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <form id="multi-step-form" class="space-y-6">
+                            <!-- Step 1: Personal Information -->
+                            <div class="form-step active" data-step="1">
+                                <div class="text-center mb-8">
+                                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-2">Informations personnelles</h2>
+                                    <p class="text-gray-600">Commençons par faire connaissance</p>
                                 </div>
-                                <div class="text-right">
-                                    <div class="text-2xl font-bold text-primary">299€</div>
-                                    <div class="text-sm text-secondary">TTC</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card border-2 border-primary hover:border-blue-700 transition-colors duration-300 cursor-pointer" 
-                             data-package="premium" data-price="799">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Pack Premium</h3>
-                                    <p class="text-secondary text-sm">Formule complète</p>
-                                    <span class="bg-primary text-white px-2 py-1 rounded-full text-xs">POPULAIRE</span>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-2xl font-bold text-primary">799€</div>
-                                    <div class="text-sm text-secondary">TTC</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card border-2 border-gray-200 hover:border-primary transition-colors duration-300 cursor-pointer" 
-                             data-package="ultimate" data-price="1499">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Pack Ultimate</h3>
-                                    <p class="text-secondary text-sm">Formule sur mesure</p>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-2xl font-bold text-primary">1499€</div>
-                                    <div class="text-sm text-secondary">TTC</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Selected Package Summary -->
-                    <div class="card bg-gray-50 mb-6" id="package-summary" style="display: none;">
-                        <h3 class="font-bold mb-3">Récapitulatif</h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span>Programme sélectionné :</span>
-                                <span id="selected-package-name" class="font-bold"></span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Prix :</span>
-                                <span id="selected-package-price" class="font-bold text-primary"></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Stripe Payment Form -->
-                    <div class="card" id="payment-section" style="display: none;">
-                        <h3 class="font-bold mb-4">Paiement sécurisé</h3>
-                        <p class="text-secondary text-sm mb-4">
-                            Vos informations de paiement sont protégées par un cryptage SSL de niveau bancaire.
-                        </p>
-                        
-                        <!-- Stripe Elements Placeholder -->
-                        <div class="space-y-4">
-                            <div class="form-group">
-                                <label class="form-label">Numéro de carte</label>
-                                <div class="form-input bg-gray-100 flex items-center">
-                                    <i class="fas fa-credit-card text-gray-400 mr-2"></i>
-                                    <span class="text-gray-500">4242 4242 4242 4242</span>
-                                </div>
-                            </div>
-                            
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="form-group">
-                                    <label class="form-label">Date d'expiration</label>
-                                    <div class="form-input bg-gray-100 flex items-center">
-                                        <i class="fas fa-calendar text-gray-400 mr-2"></i>
-                                        <span class="text-gray-500">MM/AA</span>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">Prénom *</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Nom *</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-input" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="form-label">CVC</label>
-                                    <div class="form-input bg-gray-100 flex items-center">
-                                        <i class="fas fa-lock text-gray-400 mr-2"></i>
-                                        <span class="text-gray-500">123</span>
-                                    </div>
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Téléphone *</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+33 1 23 45 67 89" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="birthDate" class="form-label">Date de naissance *</label>
+                                    <input type="date" id="birthDate" name="birthDate" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="nationality" class="form-label">Nationalité *</label>
+                                    <select id="nationality" name="nationality" class="form-input" required>
+                                        <option value="">Sélectionnez votre nationalité</option>
+                                        <option value="french">Française</option>
+                                        <option value="european">Européenne</option>
+                                        <option value="other">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="flex justify-end">
+                                    <button type="button" class="btn btn-primary px-8 py-3 next-step" data-next="2">
+                                        Suivant
+                                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
-                            
-                            <div class="form-group">
-                                <label class="form-label">Nom sur la carte</label>
-                                <input type="text" class="form-input" placeholder="Nom complet">
+
+                            <!-- Step 2: Project Information -->
+                            <div class="form-step" data-step="2">
+                                <div class="text-center mb-8">
+                                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-2">Votre projet</h2>
+                                    <p class="text-gray-600">Parlez-nous de vos objectifs</p>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="education" class="form-label">Niveau d'éducation actuel *</label>
+                                    <select id="education" name="education" class="form-input" required>
+                                        <option value="">Sélectionnez votre niveau</option>
+                                        <option value="bac">Baccalauréat</option>
+                                        <option value="bac+2">Bac+2 (DUT, BTS)</option>
+                                        <option value="bac+3">Bac+3 (Licence)</option>
+                                        <option value="bac+4">Bac+4 (Master 1)</option>
+                                        <option value="bac+5">Bac+5 (Master 2)</option>
+                                        <option value="other">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="destination" class="form-label">Destination souhaitée *</label>
+                                    <select id="destination" name="destination" class="form-input" required>
+                                        <option value="">Sélectionnez votre destination</option>
+                                        <option value="canada">Canada</option>
+                                        <option value="usa">États-Unis</option>
+                                        <option value="uk">Royaume-Uni</option>
+                                        <option value="australia">Australie</option>
+                                        <option value="germany">Allemagne</option>
+                                        <option value="spain">Espagne</option>
+                                        <option value="other">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Décrivez votre projet (optionnel)</label>
+                                    <textarea id="message" name="message" class="form-input form-textarea" rows="4"
+                                              placeholder="Parlez-nous de vos objectifs, vos motivations, et ce que vous espérez accomplir..."></textarea>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <button type="button" class="btn btn-outline px-8 py-3 prev-step" data-prev="1">
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Précédent
+                                    </button>
+                                    <button type="button" class="btn btn-primary px-8 py-3 next-step" data-next="3">
+                                        Suivant
+                                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Payment -->
+                            <div class="form-step" data-step="3">
+                                <div class="text-center mb-8">
+                                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-2">Finalisation</h2>
+                                    <p class="text-gray-600">Confirmez votre inscription</p>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="flex items-start space-x-3 cursor-pointer">
+                                        <input type="checkbox" name="terms" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" required>
+                                        <span class="text-sm text-gray-600">J'accepte les <a href="#" class="text-primary underline">conditions générales</a> et la <a href="#" class="text-primary underline">politique de confidentialité</a> *</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="flex items-start space-x-3 cursor-pointer">
+                                        <input type="checkbox" name="newsletter" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                        <span class="text-sm text-gray-600">Je souhaite recevoir la newsletter OTM Education avec les dernières actualités et conseils</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <button type="button" class="btn btn-outline px-8 py-3 prev-step" data-prev="2">
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Précédent
+                                    </button>
+                                    <button type="submit" class="btn btn-primary px-8 py-3" id="pay-button">
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Payer 35€ et commencer
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Registration Fee Information -->
+                <div class="lg:col-span-1" data-aos="fade-left">
+                    <div class="sticky top-8">
+                        <!-- 35€ Information Card -->
+                        <div class="bg-gradient-to-br from-primary to-blue-600 text-white p-6 rounded-2xl shadow-2xl relative overflow-hidden mb-6">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-white opacity-10 rounded-full -translate-y-12 translate-x-12"></div>
+                            <div class="absolute bottom-0 left-0 w-16 h-16 bg-white opacity-10 rounded-full translate-y-8 -translate-x-8"></div>
+                            <div class="relative z-10">
+                                <div class="text-center mb-6">
+                                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-4xl font-bold mb-2">35€</h3>
+                                    <p class="text-lg opacity-90">Contribution d'inscription</p>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <h4 class="text-lg font-semibold mb-3">Ce que vous obtenez :</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li class="flex items-start">
+                                            <svg class="w-4 h-4 mr-2 mt-0.5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span><strong>Entretien d'orientation</strong> personnalisé</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-4 h-4 mr-2 mt-0.5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span><strong>Évaluation complète</strong> de votre profil</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-4 h-4 mr-2 mt-0.5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span><strong>Test de français</strong> gratuit</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-4 h-4 mr-2 mt-0.5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span><strong>Stratégie personnalisée</strong> pour votre réussite</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         
-                        <button type="button" class="btn btn-primary w-full mt-6" id="pay-button">
-                            <i class="fas fa-lock mr-2"></i>
-                            Payer et finaliser l'inscription
-                        </button>
+                        <!-- Trust Signals -->
+                        <div class="space-y-4">
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                <div class="flex items-center text-green-700">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm font-medium">Garantie satisfait ou remboursé</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                <div class="flex items-center text-blue-700">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm font-medium">Paiement 100% sécurisé</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                                <div class="flex items-center text-purple-700">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-sm font-medium">Réponse sous 24h</span>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <p class="text-xs text-center text-gray-500 mt-4">
-                            <i class="fas fa-shield-alt mr-1"></i>
-                            Paiement sécurisé par Stripe
-                        </p>
+                        <!-- Why Pay Explanation -->
+                        <div class="bg-gray-50 rounded-lg p-4 mt-6">
+                            <h4 class="text-sm font-bold text-gray-800 mb-2">Pourquoi cette contribution ?</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Cette contribution nous permet de vous offrir un service de qualité dès le premier contact. 
+                                C'est un investissement dans votre réussite qui vous garantit un accompagnement professionnel.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -250,42 +326,58 @@
 </section>
 
 <!-- Benefits Section -->
-<section class="section bg-gray-50">
+<section id="benefits" class="section bg-white">
     <div class="container mx-auto px-4">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Pourquoi s'inscrire maintenant ?</h2>
-            <p>Profitez de nos avantages exclusifs et commencez votre parcours sans attendre.</p>
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                </svg>
+                Avantages exclusifs
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                Pourquoi s'inscrire maintenant ?
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Profitez de nos avantages exclusifs et commencez votre parcours vers la réussite internationale.
+            </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="card text-center hover-lift" data-aos="fade-up" data-aos-delay="100">
-                <div class="feature-icon mx-auto mb-6">
-                    <i class="fas fa-rocket"></i>
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                    </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Démarrage rapide</h3>
-                <p>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Démarrage rapide</h3>
+                <p class="text-gray-600">
                     Commencez votre accompagnement dans les 24h suivant votre inscription. 
                     Pas de temps perdu !
                 </p>
             </div>
             
-            <div class="card text-center hover-lift" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-icon mx-auto mb-6">
-                    <i class="fas fa-gift"></i>
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                    </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Bonus exclusifs</h3>
-                <p>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Bonus exclusifs</h3>
+                <p class="text-gray-600">
                     Accès à nos ressources exclusives : guides, templates, et conseils d'experts 
                     pour maximiser vos chances de réussite.
                 </p>
             </div>
             
-            <div class="card text-center hover-lift" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-icon mx-auto mb-6">
-                    <i class="fas fa-users"></i>
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                    </svg>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Communauté privée</h3>
-                <p>
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Communauté privée</h3>
+                <p class="text-gray-600">
                     Rejoignez notre communauté d'étudiants internationaux et échangez 
                     avec des personnes partageant vos objectifs.
                 </p>
@@ -314,72 +406,273 @@
     </div>
 </section>
 
-<!-- Registration Form JavaScript -->
+<!-- Multi-Step Form JavaScript -->
 <script>
-// Package selection
-document.querySelectorAll('[data-package]').forEach(card => {
-    card.addEventListener('click', function() {
-        // Remove active class from all cards
-        document.querySelectorAll('[data-package]').forEach(c => {
-            c.classList.remove('border-primary', 'border-blue-700');
-            c.classList.add('border-gray-200');
-        });
-        
-        // Add active class to selected card
-        this.classList.remove('border-gray-200');
-        this.classList.add('border-primary');
-        
-        // Update form
-        const packageSelect = document.getElementById('program');
-        packageSelect.value = this.dataset.package;
-        
-        // Show package summary
-        const summary = document.getElementById('package-summary');
-        const packageName = this.querySelector('h3').textContent;
-        const packagePrice = this.dataset.price + '€';
-        
-        document.getElementById('selected-package-name').textContent = packageName;
-        document.getElementById('selected-package-price').textContent = packagePrice;
-        summary.style.display = 'block';
-        
-        // Show payment section
-        document.getElementById('payment-section').style.display = 'block';
+// Multi-step form functionality
+let currentStep = 1;
+const totalSteps = 3;
+
+// Initialize form
+document.addEventListener('DOMContentLoaded', function() {
+    updateStepIndicators();
+    updateFormVisibility();
+});
+
+// Step navigation
+document.querySelectorAll('.next-step').forEach(button => {
+    button.addEventListener('click', function() {
+        const nextStep = parseInt(this.dataset.next);
+        if (validateCurrentStep()) {
+            currentStep = nextStep;
+            updateStepIndicators();
+            updateFormVisibility();
+            scrollToForm();
+        }
+    });
+});
+
+document.querySelectorAll('.prev-step').forEach(button => {
+    button.addEventListener('click', function() {
+        const prevStep = parseInt(this.dataset.prev);
+        currentStep = prevStep;
+        updateStepIndicators();
+        updateFormVisibility();
+        scrollToForm();
     });
 });
 
 // Form validation
-document.getElementById('registration-form').addEventListener('input', function() {
-    const requiredFields = this.querySelectorAll('[required]');
+function validateCurrentStep() {
+    const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+    const requiredFields = currentStepElement.querySelectorAll('[required]');
     let isValid = true;
     
     requiredFields.forEach(field => {
-        if (!field.value) {
+        if (!field.value.trim()) {
             isValid = false;
+            field.classList.add('border-red-500');
+            
+            // Remove error styling on input
+            field.addEventListener('input', function() {
+                this.classList.remove('border-red-500');
+            });
+        } else {
+            field.classList.remove('border-red-500');
         }
     });
     
-    const packageSelect = document.getElementById('program');
-    if (!packageSelect.value) {
-        isValid = false;
+    if (!isValid) {
+        // Show error message
+        showToast('Veuillez remplir tous les champs obligatoires', 'error');
     }
     
-    const payButton = document.getElementById('pay-button');
-    if (payButton) {
-        payButton.disabled = !isValid;
-        payButton.classList.toggle('opacity-50', !isValid);
+    return isValid;
+}
+
+// Update step indicators
+function updateStepIndicators() {
+    document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+        const stepNumber = index + 1;
+        if (stepNumber < currentStep) {
+            indicator.classList.add('completed');
+            indicator.classList.remove('active');
+        } else if (stepNumber === currentStep) {
+            indicator.classList.add('active');
+            indicator.classList.remove('completed');
+        } else {
+            indicator.classList.remove('active', 'completed');
+        }
+    });
+}
+
+// Update form visibility
+function updateFormVisibility() {
+    document.querySelectorAll('.form-step').forEach(step => {
+        const stepNumber = parseInt(step.dataset.step);
+        if (stepNumber === currentStep) {
+            step.classList.add('active');
+        } else {
+            step.classList.remove('active');
+        }
+    });
+}
+
+// Scroll to form
+function scrollToForm() {
+    document.getElementById('registration-form').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+    });
+}
+
+// Form submission
+document.getElementById('multi-step-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateCurrentStep()) {
+        // Show loading state
+        const submitButton = document.getElementById('pay-button');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = `
+            <svg class="animate-spin w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Traitement en cours...
+        `;
+        submitButton.disabled = true;
+        
+        // Simulate payment processing
+        setTimeout(() => {
+            showSuccessModal();
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        }, 2000);
     }
 });
 
-// Payment button
-document.getElementById('pay-button').addEventListener('click', function() {
-    // Show success message (in real app, this would process payment via Stripe)
-    alert('Paiement simulé avec succès ! Votre inscription a été confirmée. Nous vous contacterons dans les 24h.');
-});
+// Success modal
+function showSuccessModal() {
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    modal.innerHTML = `
+        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">Inscription confirmée !</h3>
+            <p class="text-gray-600 mb-6">
+                Votre paiement a été traité avec succès. Nous vous contacterons dans les 24h pour planifier votre entretien d'orientation.
+            </p>
+            <button onclick="this.closest('.fixed').remove()" class="btn btn-primary px-8 py-3">
+                Parfait !
+            </button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
+
+// Toast notifications
+function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg ${
+        type === 'error' ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+    }`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
 
 // Scroll to top function
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
 </script>
+
+<!-- Multi-Step Form CSS -->
+<style>
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.step-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active .step-number {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.step-indicator.active .step-label {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.step-indicator.completed .step-number {
+    background-color: #10b981;
+    color: white;
+}
+
+.step-indicator.completed .step-label {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.step-line {
+    width: 60px;
+    height: 2px;
+    background-color: #e5e7eb;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(50%);
+    transition: all 0.3s ease;
+}
+
+.step-indicator.completed + .step-line {
+    background-color: #10b981;
+}
+
+.form-step {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input.border-red-500 {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+</style>
 
 <%- include('../partials/footer') %>
